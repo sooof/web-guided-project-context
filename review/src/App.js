@@ -37,19 +37,10 @@ const SubComp2 = () => {
 
     const handleClick = ()=> {
         dispatch(setLocation({ street: "2222", city: "Philadelphia", state: "PA", postcode: "19191" } ));
-        // setPerson({
-        //     ...person,
-        //     location: {
-        //         street: "2222",
-        //         city: "Philadelphia",
-        //         state: "PA",
-        //         postcode: "19191"
-        //     }
-        // });
     }
 
     console.log(person);
-    
+
     return (<div className="component">
         <h1>SubComp2</h1>
         <p>Dog name: {dogName}</p>
