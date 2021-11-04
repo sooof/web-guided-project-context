@@ -6,22 +6,22 @@ const App = ()=> {
     
     return(<div className="App component">
         <h1>Main App</h1>
-        <SubComp1 person={person}/>
+        <SubComp1 person={person} setPerson={setPerson}/>
     </div>);
 };
 
 const SubComp1 = (props) => {
-    const { person } = props;
+    const { person, setPerson } = props;
     
     return (<div className="component">
         <h1>SubComp1</h1>
         <p>{`${person.name.title} ${person.name.first} ${person.name.last}`}</p>
-        <SubComp2 person={person}/>
+        <SubComp2 person={person} setPerson={setPerson}/>
     </div>)
 }
 
 const SubComp2 = (props) => {
-    const { person } = props;
+    const { person, setPerson } = props;
 
     return (<div className="component">
         <h1>SubComp2</h1>
