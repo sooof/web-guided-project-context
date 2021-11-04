@@ -5,7 +5,7 @@ import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
 
 export default function App() {
-  const { families, activeFamily} = useContext(FamilyContext);
+  const { families, activeFamily, setActiveFamily} = useContext(FamilyContext);
 
   return (
     <div className="App">

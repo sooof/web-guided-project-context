@@ -11,7 +11,7 @@ const Application = () => {
     const [families] = useState(data);
     const [activeFamily, setActiveFamily] = useState(families[0]);
     
-    return(<FamilyContext.Provider value={{families, activeFamily}}><App/></FamilyContext.Provider>)
+    return(<FamilyContext.Provider value={{families, activeFamily, setActiveFamily}}><App/></FamilyContext.Provider>)
 }
 
 
