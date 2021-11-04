@@ -11,6 +11,8 @@ const App = ()=> {
 };
 
 const SubComp1 = (props) => {
+    const { person } = props;
+    console.log(person);
     return (<div className="component">
         <h1>SubComp1</h1>
         <SubComp2/>
