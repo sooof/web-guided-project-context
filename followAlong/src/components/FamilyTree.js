@@ -8,6 +8,8 @@ import FamilyContext from './../App';
 export default function FamilyTree(props) {
   const family = useContext(FamilyContext);
 
+  console.log(family);
+  
   return (
     <section className="FamilyTree">
       <h1>{props.family.familyName}</h1>
