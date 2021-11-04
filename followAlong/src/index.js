@@ -11,10 +11,10 @@ const Application = () => {
     const [families] = useState(data);
     const [activeFamily, setActiveFamily] = useState(families[0]);
     
-    return(<App/>)
+    return(<FamilyContext.Provider value={{families, activeFamily}}><App/></FamilyContext.Provider>)
 }
 
 
 const rootElement = document.getElementById("root");
 
-ReactDOM.render(<FamilyContext.Provider value={{families, activeFamily}}><Application /></FamilyContext.Provider>, rootElement);
+ReactDOM.render(<Application />, rootElement);

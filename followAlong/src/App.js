@@ -1,9 +1,12 @@
 import React, {useContext} from "react";
+import FamilyContext from './contexts/FamilyContext';
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
 
 export default function App() {
+  const { families, activeFamily} = useContext(FamilyContext);
+
   return (
     <div className="App">
       <section className="header">
@@ -20,7 +23,7 @@ export default function App() {
         ))}
       </section>
       <FamilyContext.Provider value={activeFamily}>
-        {activeFamily && <FamilyTree />}
+        {/* {activeFamily && <FamilyTree />} */}
       </FamilyContext.Provider>
     </div>
   );
