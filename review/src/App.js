@@ -27,9 +27,10 @@ const SubComp2 = (props) => {
         setPerson({
             ...person,
             location: {
-                title: "Mx",
-                first: "First",
-                last: "Last"
+                street: "2222",
+                city: "Philadelphia",
+                state: "PA",
+                postcode: "19191"
             }
         });
     }
