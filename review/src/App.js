@@ -51,11 +51,7 @@ const SubComp3 = () => {
     const { person, dispatch } = useContext(PersonContext);
 
     const handleClick = ()=> {
-        dispatch(setName({
-            title: "Mx",
-            first: "First",
-            last: "Last"
-        }));
+        dispatch(setName({ title: "Mx", first: "First", last: "Last"}));
     }
 
     return (<div className="component">
