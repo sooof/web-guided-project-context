@@ -3,9 +3,11 @@ import React, { useContext } from "react";
 import Parents from "./Parents";
 import Siblings from "./Siblings";
 
+import FamilyContext from './../App';
+
 export default function FamilyTree(props) {
   const family = useContext(FamilyContext);
-  
+
   return (
     <section className="FamilyTree">
       <h1>{props.family.familyName}</h1>
