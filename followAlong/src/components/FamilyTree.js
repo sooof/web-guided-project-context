@@ -6,7 +6,7 @@ import Siblings from "./Siblings";
 import FamilyContext from './../contexts/FamilyContext';
 
 export default function FamilyTree() {
-  const family = useContext(FamilyContext);
+  const { family } = useContext(FamilyContext);
 
   return (
     <section className="FamilyTree">

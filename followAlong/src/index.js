@@ -16,5 +16,4 @@ const Application = () => {
 
 
 const rootElement = document.getElementById("root");
-
 ReactDOM.render(<Application />, rootElement);
