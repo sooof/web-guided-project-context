@@ -11,7 +11,6 @@ export default function App() {
   const [families] = useState(data);
   const [activeFamily, setActiveFamily] = useState(families[0]);
 
-  console.log(activeFamily);
   return (
     <div className="App">
       <section className="header">
