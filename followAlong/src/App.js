@@ -22,9 +22,7 @@ export default function App() {
           </button>
         ))}
       </section>
-      <FamilyContext.Provider value={activeFamily}>
-        {family && <FamilyTree />}
-      </FamilyContext.Provider>
+      {activeFamily && <FamilyTree />}
     </div>
   );
 }
