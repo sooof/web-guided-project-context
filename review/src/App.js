@@ -1,13 +1,14 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, useReducer, createContext, useContext } from 'react';
 import data from './data';
 
-import { reducer, initialState, }
+import { reducer, initialState, setLocation, setName } from './reducer';
 
 const PersonContext = createContext();
 const DogContext = createContext();
 
 const App = ()=> {
-    const [person, setPerson ] = useState(data);
+    // const [person, setPerson ] = useState(data);
+    const [person, dispatch] = useReducer(reducer, initialState);
     
     return(
         <div className="App component">
