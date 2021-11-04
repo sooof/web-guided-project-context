@@ -38,16 +38,17 @@ const SubComp2 = (props) => {
     return (<div className="component">
         <h1>SubComp2</h1>
         <button onClick={handleClick}>Change Location</button>
-        <SubComp3 person={person}/>
+        <SubComp3 person={person} setPerson={setPerson}/>
     </div>)
 }
 
 const SubComp3 = (props) => {
-    const {person} = props;
+    const {person, setPerson} = props;
     
     return (<div className="component">
         <h1>SubComp3</h1>
         <p>{`${person.location.street} ${person.location.city}, ${person.location.state} ${person.location.postcode}`}</p>
+        <button onClick={handleClick}>Change Name</button>
     </div>)
 }
 
