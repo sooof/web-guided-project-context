@@ -23,8 +23,15 @@ const SubComp1 = (props) => {
 const SubComp2 = (props) => {
     const { person, setPerson } = props;
 
+    const handleClick = ()=> {
+        setPerson({
+            
+        });
+    }
+
     return (<div className="component">
         <h1>SubComp2</h1>
+        <button onClick={handleClick}>Change Location</button>
         <SubComp3 person={person}/>
     </div>)
 }
