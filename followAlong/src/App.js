@@ -5,7 +5,7 @@ import { data } from "./data";
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
 
-export const FamilyContext = createContext();
+import FamilyContext from './contexts/FamilyContext';
 
 export default function App() {
   const [families] = useState(data);
