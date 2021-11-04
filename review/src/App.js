@@ -16,9 +16,11 @@ const App = ()=> {
 };
 
 const SubComp1 = () => {
+    const context = useContext(PersonContext);
+    
     return (<div className="component">
         <h1>SubComp1</h1>
-        <p>{`${useContext(PersonContext).person.name.title}`}</p>
+        <p>{`${person.name.title} ${person.name.first} ${person.name.last}`}</p>
         <SubComp2 />
     </div>)
 }
