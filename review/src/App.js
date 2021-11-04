@@ -9,15 +9,14 @@ const App = ()=> {
     return(
         <div className="App component">
             <h1>Main App</h1>
-            <PersonContext.Provider value={{person, setPerson, name:"warren", arr:[1,2,3,4]}}>
+            <PersonContext.Provider value={{person, setPerson}}>
                 <SubComp1 />
             </PersonContext.Provider>
         </div>);
 };
 
 const SubComp1 = () => {
-    const {person, name} = useContext(PersonContext);
-    console.log(name);
+    const { person } = useContext(PersonContext);
     
     return (<div className="component">
         <h1>SubComp1</h1>
@@ -52,7 +51,7 @@ const SubComp3 = () => {
     const {person, setPerson, arr} = useContext(PersonContext);
     
     console.log(arr);
-    
+
     const handleClick = ()=> {
         setPerson({
             ...person,
