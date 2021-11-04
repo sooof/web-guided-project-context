@@ -25,7 +25,12 @@ const SubComp2 = (props) => {
 
     const handleClick = ()=> {
         setPerson({
-            
+            ...person,
+            location: {
+                title: "Mx",
+                first: "First",
+                last: "Last"
+            }
         });
     }
 
