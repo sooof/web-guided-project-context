@@ -48,6 +48,8 @@ const SubComp2 = () => {
         // });
     }
 
+    console.log(person);
+    
     return (<div className="component">
         <h1>SubComp2</h1>
         <p>Dog name: {dogName}</p>
