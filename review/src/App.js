@@ -31,9 +31,10 @@ const SubComp2 = (props) => {
 
 const SubComp3 = (props) => {
     const {person} = props;
-    console.log(person);
+    
     return (<div className="component">
         <h1>SubComp3</h1>
+        <p>{`${person.location.street} ${person.location.city}, ${person.location.state} ${person.location.postcode}`}</p>
     </div>)
 }
 
