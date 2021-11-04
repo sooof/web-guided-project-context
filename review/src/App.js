@@ -31,7 +31,7 @@ const SubComp1 = () => {
 const SubComp2 = () => {
     const { person, setPerson } = useContext(PersonContext);
     const dogName = useContext(DogContext);
-    
+
     const handleClick = ()=> {
         setPerson({
             ...person,
@@ -46,6 +46,7 @@ const SubComp2 = () => {
 
     return (<div className="component">
         <h1>SubComp2</h1>
+        <p>Dog name: {dogName}</p>
         <button onClick={handleClick}>Change Location</button>
         <SubComp3 />
     </div>)
