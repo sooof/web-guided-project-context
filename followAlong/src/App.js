@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState } from "react";
 
 import { data } from "./data";
 
@@ -8,8 +8,6 @@ import "./styles.scss";
 import FamilyContext from './contexts/FamilyContext';
 
 export default function App() {
-  const [families] = useState(data);
-  const [activeFamily, setActiveFamily] = useState(families[0]);
 
   return (
     <div className="App">
