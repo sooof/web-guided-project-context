@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 
-import { data } from "./data";
+
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
 
-import FamilyContext from './contexts/FamilyContext';
-
 export default function App() {
-
   return (
     <div className="App">
       <section className="header">
