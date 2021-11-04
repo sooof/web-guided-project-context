@@ -13,7 +13,7 @@ const App = ()=> {
     return(
         <div className="App component">
             <h1>Main App</h1>
-            <PersonContext.Provider value={{person, setPerson}}>
+            <PersonContext.Provider value={{person, dispatch}}>
                 <DogContext.Provider value={"fido"}>
                     <SubComp1 />
                 </DogContext.Provider>
