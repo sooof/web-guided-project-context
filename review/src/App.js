@@ -11,18 +11,16 @@ const App = ()=> {
         <div className="App component">
             <h1>Main App</h1>
             <PersonContext.Provider value={{person, setPerson}}>
-                <SubComp1 person={person} setPerson={setPerson}/>
+                <SubComp1 />
             </PersonContext.Provider>
         </div>);
 };
 
-const SubComp1 = (props) => {
-    const { person, setPerson } = props;
-    
+const SubComp1 = () => {
     return (<div className="component">
         <h1>SubComp1</h1>
         <p>{`${person.name.title} ${person.name.first} ${person.name.last}`}</p>
-        <SubComp2 person={person} setPerson={setPerson}/>
+        {/* <SubComp2 person={person} setPerson={setPerson}/> */}
     </div>)
 }
 
