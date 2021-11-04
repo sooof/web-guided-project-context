@@ -43,12 +43,12 @@ const SubComp2 = () => {
     return (<div className="component">
         <h1>SubComp2</h1>
         <button onClick={handleClick}>Change Location</button>
-        <SubComp3 person={person} setPerson={setPerson}/>
+        <SubComp3 />
     </div>)
 }
 
-const SubComp3 = (props) => {
-    const {person, setPerson} = props;
+const SubComp3 = () => {
+    const {person, setPerson} = useContext(PersonContext);
     
     const handleClick = ()=> {
         setPerson({
