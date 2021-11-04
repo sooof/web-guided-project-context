@@ -16,7 +16,7 @@ const App = ()=> {
 };
 
 const SubComp1 = () => {
-    const context = useContext(PersonContext);
+    const {person} = useContext(PersonContext);
     
     return (<div className="component">
         <h1>SubComp1</h1>
