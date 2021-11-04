@@ -7,9 +7,14 @@ import App from "./App";
 
 import { data } from "./data";
 
-const [families] = useState(data);
-const [activeFamily, setActiveFamily] = useState(families[0]);
+const Application = () => {
+    const [families] = useState(data);
+    const [activeFamily, setActiveFamily] = useState(families[0]);
+    
+    return(<App/>)
+}
+
 
 const rootElement = document.getElementById("root");
 
-ReactDOM.render(<FamilyContext.Provider value={{families, activeFamily}}><App /></FamilyContext.Provider>, rootElement);
+ReactDOM.render(<FamilyContext.Provider value={{families, activeFamily}}><Application /></FamilyContext.Provider>, rootElement);
