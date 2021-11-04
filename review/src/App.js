@@ -39,28 +39,26 @@ const SubComp2 = () => {
         dispatch(setLocation({ street: "2222", city: "Philadelphia", state: "PA", postcode: "19191" } ));
     }
 
-    console.log(person);
-
     return (<div className="component">
         <h1>SubComp2</h1>
         <p>Dog name: {dogName}</p>
         <button onClick={handleClick}>Change Location</button>
-        {/* <SubComp3 /> */}
+        <SubComp3 />
     </div>)
 }
 
 const SubComp3 = () => {
-    const { person, setPerson } = useContext(PersonContext);
+    const { person, dispatch } = useContext(PersonContext);
 
     const handleClick = ()=> {
-        setPerson({
-            ...person,
-            name: {
-                title: "Mx",
-                first: "First",
-                last: "Last"
-            }
-        });
+        // setPerson({
+        //     ...person,
+        //     name: {
+        //         title: "Mx",
+        //         first: "First",
+        //         last: "Last"
+        //     }
+        // });
     }
 
     return (<div className="component">
