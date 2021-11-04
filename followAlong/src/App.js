@@ -1,6 +1,4 @@
-import React from "react";
-
-
+import React, {useContext} from "react";
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
