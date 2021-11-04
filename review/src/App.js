@@ -12,17 +12,18 @@ const App = ()=> {
 
 const SubComp1 = (props) => {
     const { person } = props;
-    console.log(person);
+    
     return (<div className="component">
         <h1>SubComp1</h1>
-        <SubComp2/>
+        <p>{`${person.name.title} ${person.name.first} ${person.name.last}`}</p>
+        <SubComp2 person={person}/>
     </div>)
 }
 
 const SubComp2 = () => {
     return (<div className="component">
         <h1>SubComp2</h1>
-        <SubComp3/>
+        <SubComp3 person={person}/>
     </div>)
 }
 
