@@ -26,7 +26,7 @@ const SubComp1 = () => {
 }
 
 const SubComp2 = () => {
-    const { person, setPerson} = useContext(PersonContext);
+    const { person, setPerson } = useContext(PersonContext);
 
     const handleClick = ()=> {
         setPerson({
