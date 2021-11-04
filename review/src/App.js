@@ -9,14 +9,15 @@ const App = ()=> {
     return(
         <div className="App component">
             <h1>Main App</h1>
-            <PersonContext.Provider value={{person, setPerson}}>
+            <PersonContext.Provider value={{person, setPerson, name:"warren"}}>
                 <SubComp1 />
             </PersonContext.Provider>
         </div>);
 };
 
 const SubComp1 = () => {
-    const context = useContext(PersonContext);
+    const {person, name} = useContext(PersonContext);
+    console.log(name);
     
     return (<div className="component">
         <h1>SubComp1</h1>
