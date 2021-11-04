@@ -36,15 +36,16 @@ const SubComp2 = () => {
     const dogName = useContext(DogContext);
 
     const handleClick = ()=> {
-        setPerson({
-            ...person,
-            location: {
-                street: "2222",
-                city: "Philadelphia",
-                state: "PA",
-                postcode: "19191"
-            }
-        });
+        dispatch(setLocation({ street: "2222", city: "Philadelphia", state: "PA", postcode: "19191" } ));
+        // setPerson({
+        //     ...person,
+        //     location: {
+        //         street: "2222",
+        //         city: "Philadelphia",
+        //         state: "PA",
+        //         postcode: "19191"
+        //     }
+        // });
     }
 
     return (<div className="component">
