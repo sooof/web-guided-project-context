@@ -2,6 +2,7 @@ import React, { useState, createContext, useContext } from 'react';
 import data from './data';
 
 const PersonContext = createContext();
+const DogContext = createContext();
 
 const App = ()=> {
     const [person, setPerson ] = useState(data);
@@ -10,7 +11,9 @@ const App = ()=> {
         <div className="App component">
             <h1>Main App</h1>
             <PersonContext.Provider value={{person, setPerson}}>
-                <SubComp1 />
+                <DogContext.Provider value={"fido"}>
+                    <SubComp1 />
+                </DogContext.Provider>
             </PersonContext.Provider>
         </div>);
 };
@@ -27,7 +30,8 @@ const SubComp1 = () => {
 
 const SubComp2 = () => {
     const { person, setPerson } = useContext(PersonContext);
-
+    const dogName = useContext(DogContext);
+    
     const handleClick = ()=> {
         setPerson({
             ...person,
