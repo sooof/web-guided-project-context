@@ -69,21 +69,30 @@ const SubComp2 = (props) => {
         <h1>SubComp2</h1>
         <p> Dog name is {dogName}</p>
         <button onClick={handleClick}>Change Location</button>
-        {/* <SubComp3  /> */}
+        <SubComp3  />
     </div>)
 }
 const SubComp3 = (props) => {
-    const {person, setPerson, arr} = useContext(PersonContext)
+    const {person, dispatch, arr} = useContext(PersonContext)
 
     const handleClick = () => {
-        setPerson({
-            ...person,
-            name: {
+        dispatch(
+            setName({
                 title: "222",
                 first: "San ",
                 last: "CA",
-            }
-        });
+                
+            }))
+          
+
+        // setPerson({
+        //     ...person,
+        //     name: {
+        //         title: "222",
+        //         first: "San ",
+        //         last: "CA",
+        //     }
+        // });
     }
     console.log("SubComp3 ", person)
 
