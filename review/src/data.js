@@ -1,7 +1,7 @@
 export default {
   gender: "male",
   name: {
-    title: "mr",
+    title: "mrl",
     first: "brad",
     last: "gibson"
   },

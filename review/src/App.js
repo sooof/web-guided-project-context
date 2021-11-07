@@ -10,7 +10,7 @@ const DogContext = createContext();
 const App = ()=> {
     const [person, dispatch]= useReducer(reducer, initialState)
 
-    // console.log("APP ",person)
+    console.log("APP ",person)
     return(
     <div className="App component">
         <h1>Main App</h1>
