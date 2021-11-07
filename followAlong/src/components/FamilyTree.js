@@ -8,11 +8,11 @@ import FamilyContext from "../contexts/FamilyContext";
 
 export default function FamilyTree(props) {
   // console.log("familyTree.js FamilyContext", FamilyContext)
-  const family = useContext(FamilyContext)
-  console.log("familyTree.js Family", family)
+  const {activeFamily} = useContext(FamilyContext)
+  console.log("familyTree.js Family")
   return (
     <section className="FamilyTree">
-      <h1>{family.familyName}</h1>
+      <h1>{activeFamily.familyName}</h1>
       <h2>Parents</h2>
 
       {/* Pass data down as a prop */}
