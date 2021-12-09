@@ -24,11 +24,11 @@ const SubComp1 = (props) => {
     return (<div className="component">
         <h1>SubComp1</h1>
         <p>{`${person.name.title} ${person.name.first}`}</p>
-        <SubComp2 person={person} setPerson={setPerson} />
+        <SubComp2 />
     </div>)
 }
 const SubComp2 = (props) => {
-    const {person, setPerson } = props
+    const {person, setPerson} = useContext(PersonContext)
     console.log("Fubc---SubComp2 ", person)
     const handleClick = () => {
         setPerson({
@@ -45,11 +45,11 @@ const SubComp2 = (props) => {
     return (<div className="component">
         <h1>SubComp2</h1>
         <button onClick={handleClick}>Change Location</button>
-        <SubComp3 person={person} setPerson={setPerson}/>
+        <SubComp3 />
     </div>)
 }
 const SubComp3 = (props) => {
-    const {person, setPerson} = props 
+    const {person, setPerson} = useContext(PersonContext)
 
     const handleClick = () => {
         setPerson({
