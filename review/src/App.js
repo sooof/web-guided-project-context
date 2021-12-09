@@ -11,19 +11,25 @@ const App = ()=> {
     console.log("Func---App ", person)
     return(<div className="App component">
         <h1>Main App</h1>
-        <PersonContext.Provider  value= {{person, setPerson}}>
+        <PersonContext.Provider  value= {{person, setPerson, name: "warren", arr:[1,2,3,4,5]}}>
             <SubComp1  />
         </PersonContext.Provider>
     </div>);
 };
 
 const SubComp1 = (props) => {
-    const {person, setPerson} = useContext(PersonContext)
+    const {person, name} = useContext(PersonContext)
     console.log("context = ", person)
     console.log("Fubc---SubComp1 ", person)
+    console.log("Fubc---nema ", name)
+
+    const context = useContext(PersonContext)
+    // console.log("context = ", context)
     return (<div className="component">
         <h1>SubComp1</h1>
         <p>{`${person.name.title} ${person.name.first}`}</p>
+        <p>{`${context.person.name.title} ${context.person.name.first}   ${context.name} ` }</p>
+        <p>{`${useContext(PersonContext).person.name.title} ${useContext(PersonContext).person.name.first}`}</p>
         <SubComp2 />
     </div>)
 }
@@ -49,7 +55,7 @@ const SubComp2 = (props) => {
     </div>)
 }
 const SubComp3 = (props) => {
-    const {person, setPerson} = useContext(PersonContext)
+    const {person, setPerson, arr} = useContext(PersonContext)
 
     const handleClick = () => {
         setPerson({
@@ -62,6 +68,7 @@ const SubComp3 = (props) => {
         });
     }
     console.log("Fubc---SubComp3 ", person)
+    console.log("arr = ", arr)
     return (<div className="component">
         <h1>SubComp3</h1>
         <p>{`${person.location.street} ${person.location.scity} ${person.location.postcode}`}</p>
