@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+   
+import React, { useState, createContext, useContext } from 'react';
 import data from  './data'
 // console.log(data)
+
+const PersonContext = createContext();
+console.log("PersonContext = ", PersonContext)
 
 const App = ()=> {
     const [person, setPerson] = useState(data)
     console.log("Func---App ", person)
     return(<div className="App component">
         <h1>Main App</h1>
-        <SubComp1 person={person} setPerson={setPerson} />
+        <PersonContext.Provider  value= {{person, setPerson}}>
+            <SubComp1  />
+        </PersonContext.Provider>
     </div>);
 };
 
 const SubComp1 = (props) => {
-    const {person, setPerson } = props
+    const {person, setPerson} = useContext(PersonContext)
+    console.log("context = ", person)
     console.log("Fubc---SubComp1 ", person)
     return (<div className="component">
         <h1>SubComp1</h1>
