@@ -1,18 +1,25 @@
    
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext, useReducer } from 'react';
+import { reducer,initialState,setLocation, setName } from './reducer';
 import data from  './data'
 // console.log(data)
 
 const PersonContext = createContext();
 console.log("PersonContext = ", PersonContext)
 
+const DogContext = createContext();
+
 const App = ()=> {
-    const [person, setPerson] = useState(data)
+    // const [person, setPerson] = useState(data)
+
+    const [person, dispatch]= useReducer(reducer, initialState)
     console.log("Func---App ", person)
     return(<div className="App component">
         <h1>Main App</h1>
-        <PersonContext.Provider  value= {{person, setPerson, name: "warren", arr:[1,2,3,4,5]}}>
-            <SubComp1  />
+        <PersonContext.Provider  value= {{person, dispatch, name: "warren", arr:[1,2,3,4,5]}}>
+            <DogContext.Provider value={'fidp'}>
+                {/* <SubComp1  /> */}
+            </DogContext.Provider>
         </PersonContext.Provider>
     </div>);
 };
