@@ -18,7 +18,7 @@ const App = ()=> {
         <h1>Main App</h1>
         <PersonContext.Provider  value= {{person, dispatch, name: "warren", arr:[1,2,3,4,5]}}>
             <DogContext.Provider value={'fidp'}>
-                {/* <SubComp1  /> */}
+                <SubComp1  />
             </DogContext.Provider>
         </PersonContext.Provider>
     </div>);
@@ -41,22 +41,36 @@ const SubComp1 = (props) => {
     </div>)
 }
 const SubComp2 = (props) => {
-    const {person, setPerson} = useContext(PersonContext)
+    // const {person, setPerson} = useContext(PersonContext)
+    const {person, dispatch} = useContext(PersonContext)
     console.log("Fubc---SubComp2 ", person)
-    const handleClick = () => {
-        setPerson({
-            ...person,
-            location: {
-                street: "222",
-                city: "San ",
-                state: "CA",
-                postcode: "94706"
 
-            }
-        });
+    const dogName = useContext(DogContext)
+    const handleClick = () => {
+        dispatch(
+            setLocation({
+                 
+                    street: "222",
+                    city: "San ",
+                    state: "CA",
+                    postcode: "94706"
+                
+            })
+        )
+        // setPerson({
+        //     ...person,
+        //     location: {
+        //         street: "222",
+        //         city: "San ",
+        //         state: "CA",
+        //         postcode: "94706"
+
+        //     }
+        // });
     }
     return (<div className="component">
         <h1>SubComp2</h1>
+        <p> Dog name is {dogName}</p>
         <button onClick={handleClick}>Change Location</button>
         <SubComp3 />
     </div>)
