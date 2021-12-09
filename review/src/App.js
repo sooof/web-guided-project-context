@@ -76,17 +76,27 @@ const SubComp2 = (props) => {
     </div>)
 }
 const SubComp3 = (props) => {
-    const {person, setPerson, arr} = useContext(PersonContext)
+    // const {person, setPerson, arr} = useContext(PersonContext)
+    const {person, dispatch, arr} = useContext(PersonContext)
 
     const handleClick = () => {
-        setPerson({
-            ...person,
-            name: {
+        dispatch(
+            setName({
                 title: "222",
                 first: "San ",
                 last: "CA",
-            }
-        });
+                
+            }))
+          
+
+        // setPerson({
+        //     ...person,
+        //     name: {
+        //         title: "222",
+        //         first: "San ",
+        //         last: "CA",
+        //     }
+        // });
     }
     console.log("Fubc---SubComp3 ", person)
     console.log("arr = ", arr)
