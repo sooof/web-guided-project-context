@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, createContext, useContext } from "react";
 
 import { data } from "./data";
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
+
+
+export const FamilyContext =   createContext()
+console.log("FamilyContext", FamilyContext)
 
 export default function App() {
   const [families] = useState(data);
@@ -24,7 +28,10 @@ export default function App() {
           </button>
         ))}
       </section>
-      {activeFamily && <FamilyTree family={activeFamily} />}
+      <FamilyContext.Provider value={activeFamily}>
+      {activeFamily && <FamilyTree  />}
+      </FamilyContext.Provider>
+     
     </div>
   );
 }
