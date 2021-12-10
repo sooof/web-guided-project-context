@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 
 import Parents from "./Parents";
 import Siblings from "./Siblings";
-
-import { FamilyContext } from "../App";
+import FamilyContext from "../contexts/FamilyContext";
+// import { FamilyContext } from "../App";
 console.log("FT FamilyContext", FamilyContext)
 
-export default function FamilyTree(props) {
+export default function FamilyTree() {
   const family = useContext(FamilyContext)
-  console.log("familyTree.js Family", family)
+  // console.log("familyTree.js Family", family)
   return (
     <section className="FamilyTree">
       <h1>{family.familyName}</h1>

@@ -4,10 +4,10 @@ import { data } from "./data";
 
 import FamilyTree from "./components/FamilyTree";
 import "./styles.scss";
-
-
-export const FamilyContext =   createContext()
-console.log("FamilyContext", FamilyContext)
+import FamilyContext from "./contexts/FamilyContext";
+// 
+// export const FamilyContext =   createContext()
+// console.log("FamilyContext", FamilyContext)
 
 export default function App() {
   const [families] = useState(data);
